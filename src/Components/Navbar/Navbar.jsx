@@ -1,8 +1,11 @@
-import React from 'react'
+
 import "./navbar.css"
 import logo from "../Assets/site-logo.png"
 import { TiShoppingCart } from "react-icons/ti";
+import { useState } from "react"
 const Navbar = () => {
+  const [menu,setMenu] = useState("shop")
+
   return (
     <div className='navbar'>
         <div className="nav-logo">
@@ -10,15 +13,16 @@ const Navbar = () => {
             
         </div>
         <ul className='nav-menu'>
-            <li>Home</li>
-            <li>Shop</li>
-            <li>About</li>
-            <li>Contact Us</li>
+            <li onClick={()=>{setMenu("Home")}}>Home {menu==="Home"?<hr/>:<></>}</li>
+            <li onClick={()=>{setMenu("Shop")}}>Shop {menu==="Shop"?<hr/>:<></>}</li>
+            <li onClick={()=>{setMenu("About")}}>About {menu==="About"?<hr/>:<></>}</li>
+            <li onClick={()=>{setMenu("Contact")}}>Contact Us {menu==="Contact"?<hr/>:<></>}</li>
 
         </ul>
         <div className="nav-login">
             <button>Log in</button>
-            <TiShoppingCart />
+            <TiShoppingCart size={40} />
+            <div className="nav-cart-count">0</div>
         </div>
         </div>
   )
