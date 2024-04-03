@@ -4,6 +4,7 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { TiShoppingCart } from "react-icons/ti";
 import { IoClose } from "react-icons/io5";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [menu, setMenu] = useState(false);
@@ -28,14 +29,14 @@ const Navbar = () => {
       
       <ul className={`nav-menu ${showSidebar ? "show-sidebar" : "close-sidebar"}`}>
         <div className="close-sidebar" onClick={closeSidebar}><IoClose  size={30} /></div>
-        <li onClick={() => setMenu("Home")}>Home {menu === "Home" ? <hr /> : <></>}</li>
-        <li onClick={() => setMenu("Shop")}>Shop {menu === "Shop" ? <hr /> : <></>}</li>
-        <li onClick={() => setMenu("About")}>About {menu === "About" ? <hr /> : <></>}</li>
-        <li onClick={() => setMenu("Contact")}>Contact Us {menu === "Contact" ? <hr /> : <></>}</li>
+        <li onClick={() => setMenu("Home")}><Link style={{color: "black"}} to = "/">Home</Link> {menu === "Home" ? <hr /> : <></>}</li>
+        <li onClick={() => setMenu("Shop")}><Link style={{color: "black"}} to = "/shop">Shop</Link> {menu === "Shop" ? <hr /> : <></>}</li>
+        <li onClick={() => setMenu("About")}> <Link style={{color: "black"}} to = "/about">About</Link> {menu === "About" ? <hr /> : <></>}</li>
+        <li onClick={() => setMenu("Contact")}><Link style={{color: "black"}} to = "/contact">Contact us</Link> {menu === "Contact" ? <hr /> : <></>}</li>
       </ul>
       <div className="nav-login">
-        <button>Log in</button>
-        <TiShoppingCart size={30} />
+       <Link to = "/loginsignup"><button>Log in</button></Link> 
+        <Link style={{color: "black"}} to = "/cart"><TiShoppingCart size={30} /></Link>
         <div className="nav-cart-count">0</div>
       </div>
     </div>

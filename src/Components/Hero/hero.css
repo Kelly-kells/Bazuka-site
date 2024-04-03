@@ -1,0 +1,102 @@
+/* hero.css */
+
+.hero {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 4px;
+    background-color: #eaf1ea;
+    
+  }
+  .hero-btn button {
+    width: 160px;
+    height: 45px;
+    color: white;
+    background-color: #209b42;
+    border-radius: 50px 20px;
+    border: 0;
+    font-size: 17px;
+    font-weight: 550;
+    margin-top: 10px;
+    transition: 0.4s ease-out;
+    cursor: pointer;
+  }
+  .hero-btn button:hover{
+    transform: scale(1.05)
+  }
+  
+  .hero h2{
+    font-size: 1.7rem;
+    font-weight: 450;
+  }
+  .hero h1{
+    font-size: 3.3rem;
+    font-weight: 600;
+  }
+  .hero p{
+    font-size: 1.1rem;
+    
+  }
+  
+  
+  
+  
+  
+  .image-container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+  
+  .gallery-image {
+    width: 400px; /* Set the desired width */
+     height: 400px;
+   object-fit: cover;
+    margin: 10px; /* Add margin between images */
+  }
+  
+  /* Media query for medium screens */
+  @media screen and (max-width: 900px) {
+    .hero {
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+    }
+  
+    .hero-left,
+    .hero-right {
+      margin: 0;
+      width: 100%;
+      padding: 10px;
+      
+    }
+    .hero-left{
+        text-align: center;
+    }
+    .image-container{
+        justify-content: center;
+        
+    }
+  }
+  
+  /* Media query for smaller screens */
+  @media screen and (max-width: 600px) {
+    .hero {
+      padding: 0px;
+    }
+
+    .hero h2{
+        font-size: 1.3rem;
+        font-weight: 450;
+        margin-top: 10px;
+      }
+      .hero h1{
+        font-size: 3rem;
+        font-weight: 550;
+      }
+      .image-container {
+        margin-top: 15px;
+      }
+  }
+  
