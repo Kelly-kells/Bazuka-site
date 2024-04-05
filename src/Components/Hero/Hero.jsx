@@ -25,10 +25,10 @@ const Hero = () => {
 
   return (
     <div className='hero '>
-      <div className="hero-left ">
-        <h2>Restoring Your Sexual Confidence</h2>
-        <h1>Bazuka Herbal Care</h1>
-        <p>Are suffering from poor performance <br/>in the bedroom? Do you feel inadequate in size?<br/> 
+      <div className="hero-left">
+        <h2 className=' animate__animated animate__backInLeft animate__slow-1s' >Restoring Your Sexual Confidence</h2>
+        <h1 className=' animate__animated animate__backInLeft animate__delay-2s'>Bazuka Herbal Care</h1>
+        <p className='animate__animated animate__backInLeft animate__delay-1s'>Are suffering from poor performance <br/>in the bedroom? Do you feel inadequate in size?<br/> 
           Then you are at the right place.<br/> 
           Let us restore your confidence as a man with our trusted herbal remedies
         </p>
