@@ -1,8 +1,11 @@
 import React from 'react'
+import  data from "../Components/Data"
 
 const Product = () => {
   return (
-    <div>Product</div>
+    <div>
+      <data/>
+    </div>
   )
 }
 
