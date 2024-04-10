@@ -18,7 +18,7 @@ let data = [
         id: 2,
         name: "Bazukamax 100ml",
         Image: small,
-        price: " ₦ 18,000.00",
+        price: " ₦ 20,000.00",
         decription: " blended of seven unique African herbs and spice that contains a huge amount of nutrients, vitamins and minerals to give maximum long-lasting sexual performance and turn you to a real man"
 
     },
@@ -27,7 +27,7 @@ let data = [
         id: 3,
         name: "Bazukamax 500ml",
         Image: big,
-        price: " ₦ 75,000.00",
+        price: " ₦ 80,000.00",
         decription: " blended of seven unique African herbs and spice that contains a huge amount of nutrients, vitamins and minerals to give maximum long-lasting sexual performance and turn you to a real man"
 
     },
@@ -53,4 +53,4 @@ let data = [
 
 
 ]
-export default Data;
+export default data;
