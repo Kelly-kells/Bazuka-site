@@ -5,8 +5,8 @@ import Items from '../Components/items/Items'
 const Product = () => {
   return (
     <div className='products'>
-      {data.map((Items,i) => {
-        return <Items key={i} id={Items.id} name={items.name} image={items.image} price={Items.price}/>
+      {data.map((items,i) => {
+        return <Items key={i} id={items.id} name={items.name} image={items.Image} price={items.price} description={items.decription}/>
 
 
       })}

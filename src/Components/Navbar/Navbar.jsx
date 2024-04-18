@@ -7,36 +7,64 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
-  const [menu, setMenu] = useState(false);
   const [showSidebar, setShowSidebar] = useState(false);
 
   const toggleSidebar = () => {
     setShowSidebar(!showSidebar);
   };
-  const closeSidebar =()=>{
-    setShowSidebar(false)
-  }
+
+  const closeSidebar = () => {
+    setShowSidebar(false);
+  };
+
+  // Function to close the sidebar menu after a link is clicked
+  const handleLinkClick = () => {
+    setShowSidebar(false);
+  };
 
   return (
     <div className="navbar">
-        <div className="menu-toggle" onClick={toggleSidebar}>
+      <div className="menu-toggle" onClick={toggleSidebar}>
         <GiHamburgerMenu size={30} />
       </div>
-      
+
       <div className="nav-logo">
         <img src={logo} alt="" />
       </div>
-      
-      <ul className={`nav-menu ${showSidebar ? "show-sidebar" : "close-sidebar"}`}>
-        <div className="close-sidebar" onClick={closeSidebar}><IoClose  size={30} /></div>
-        <li onClick={() => setMenu("Home")}><Link style={{color: "black"}} to = "/">Home</Link> {menu === "Home" ? <hr /> : <></>}</li>
-        <li onClick={() => setMenu("Shop")}><Link style={{color: "black"}} to = "/shop">Shop</Link> {menu === "Shop" ? <hr /> : <></>}</li>
-        <li onClick={() => setMenu("About")}> <Link style={{color: "black"}} to = "/about">About</Link> {menu === "About" ? <hr /> : <></>}</li>
-        <li onClick={() => setMenu("Contact")}><Link style={{color: "black"}} to = "/contact">Contact us</Link> {menu === "Contact" ? <hr /> : <></>}</li>
+
+      <ul className={`nav-menu ${showSidebar ? "show-sidebar" : ""}`}>
+        <div className="close-sidebar" onClick={closeSidebar}>
+          <IoClose className="close" size={30} />
+        </div>
+        <li onClick={handleLinkClick}>
+          <Link  to="/">
+            Home
+          </Link>{" "}
+        </li>
+        <li onClick={handleLinkClick}>
+          <Link  to="/shop">
+            Shop
+          </Link>{" "}
+        </li>
+        <li onClick={handleLinkClick}>
+          {" "}
+          <Link  to="/about">
+            About
+          </Link>{" "}
+        </li>
+        <li onClick={handleLinkClick}>
+          <Link  to="/contact">
+            Contact us
+          </Link>{" "}
+        </li>
       </ul>
       <div className="nav-login">
-       <Link to = "/loginsignup"><button>Log in</button></Link> 
-        <Link style={{color: "black"}} to = "/cart"><TiShoppingCart size={30} /></Link>
+        <Link to="/loginsignup">
+          <button>Log in</button>
+        </Link>
+        <Link style={{ color: "black" }} to="/cart">
+          <TiShoppingCart size={30} />
+        </Link>
         <div className="nav-cart-count">0</div>
       </div>
     </div>
